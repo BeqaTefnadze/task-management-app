@@ -1,22 +1,21 @@
-import { Component, Output } from '@angular/core';
+import { Component} from '@angular/core';
 
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header";
-import { User } from "./user/user";
 import { DUMMY_USERS } from './dummy-users';
-import { Tasks } from './Tasks/tasks';
+
+
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, User, Tasks],
+  standalone: false,
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   users = DUMMY_USERS;
   selectedUserId!: string;
+  
   
 
   get selectedUser(){

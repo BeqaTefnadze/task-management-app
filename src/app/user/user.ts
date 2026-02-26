@@ -1,16 +1,18 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Input, Output, EventEmitter, Component } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
-import { type UserType } from './user.model'
+import { type UserType } from './user.model';
+
+
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 
 
 @Component({
   selector: 'app-user',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './user.html',
   styleUrl: './user.scss',
+  
 })
 export class User {
   @Input({required: true}) user!: UserType;
